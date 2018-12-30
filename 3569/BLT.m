@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+Ts=input('enter the ts');
+W=-50:0.0001/Ts:50;
+w=(2)*(atan((W*2)/Ts));
+disp(w);
+plot(W,w);
+xlabel('W');
+ylabel('w');
+title('BLT');

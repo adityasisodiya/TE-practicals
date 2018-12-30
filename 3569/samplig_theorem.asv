@@ -1,0 +1,38 @@
+%sine signal
+A=1;
+F=5;                 %signal freq.
+T=1/F;
+t=[0:0.001/F:T*2];
+xt=A*cos(2*pi*F*t);
+subplot(221);
+plot(t,xt);
+xlabel('time');
+ylabel('Amplitude');
+title('sine wave');
+
+%exact sampling
+Fs=2*F;               %sampling freq.
+n=[0:1/Fs:T*2];
+xn=A*cos(2*pi*F*n);
+subplot(222);
+plot(t,xt);
+hold all
+stem(n,xn);
+
+%over sampling
+Fs=20;               %sampling freq.
+n=[0:1/Fs:T*2];
+xn=A*cos(2*pi*F*n);
+subplot(223);
+plot(t,xt);
+hold all
+stem(n,xn);
+
+%under sampling
+Fs=8;               %sampling freq.
+n=[0:1/Fs:T*2];
+xn=A*cos(2*pi*F*n);
+subplot(224);
+plot(t,xt);
+hold all
+stem(n,xn);

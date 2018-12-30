@@ -1,0 +1,15 @@
+clc
+clear all
+
+%complex signal
+A1=1;
+A2=2;
+F1=2;
+F2=4;
+T=1/F1;
+t=[0:0.001:T*5];
+xt=A1*sin(2*pi*F1*t)+A2*sin(2*pi*F2*t);
+plot(t,xt);
+
+%exact sampling
+Fs=

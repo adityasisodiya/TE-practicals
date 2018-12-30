@@ -1,0 +1,37 @@
+N=input('Enter the length of xn');
+xn=input('Enter the sequence');
+
+xf=(zeros(1,N));
+xp=(zeros(1,N));
+ak(1)=sqrt(1/N);
+for n=1:N-1
+    ak(n+1)=sqrt(2/N);
+end
+
+disp('DCT using inbuilt function is:');
+xl=dct(xn)
+
+disp('DCT using computation is:');
+
+for k=0:1:N-1
+    for n=0:1:N-1
+         xp(k+1)=xp(k+1)+ak(k+1)*xn(n+1)*cos((((2*n)+1)*k*pi)/(2*N));
+    end 
+end
+xp
+
+
+N=input('Enter the length of idct');
+Xk=input('Enter the sequence');
+disp('IDCT using inbuilt function is:');
+xj=idct(Xk)
+
+
+disp('IDCT using computation is:');
+
+for k=0:1:N-1
+    for n=0:1:N-1
+         xf(n+1)=xf(n+1)+ak(k+1)*Xk(k+1)*cos((((2*n)+1)*k*pi)/(2*N));
+    end 
+end
+xn

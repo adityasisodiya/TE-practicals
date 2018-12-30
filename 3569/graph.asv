@@ -1,0 +1,7 @@
+A=1
+T=2
+F=1/T
+t=[0:0.01:T];
+x(t)=A*cos(2*pi*F*T);
+plot(t,x(t));
+xlabel('time')

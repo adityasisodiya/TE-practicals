@@ -1,0 +1,9 @@
+clc;
+clear all;
+close all;
+Ts=input('enter the ts');
+W=-50:0.0001/Ts:50;
+W=(2/T)*(atan(W*T/2));
+xlabel('W');
+ylabel('w');
+title('BLT');
